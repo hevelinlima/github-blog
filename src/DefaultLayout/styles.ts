@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
-export const LayoutContainer =styled.div`
-  
-  height: calc(100vh - 10rem);
+export const LayoutContainer =styled.div` 
+  width: 100%;
 `;
 
 export const OutletContainer = styled.div`
-  max-width: 54rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
 `

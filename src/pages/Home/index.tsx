@@ -1,11 +1,14 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Profile } from "./components/Profile";
+import { HomeContainer } from "./styles";
+
 
 export function Home(){
   return(
-    <>
-      <h1>HomePage</h1>
-      <FontAwesomeIcon icon={faGithub} />
-    </>
+    <div>
+      <HomeContainer>
+        <Profile />
+      
+      </HomeContainer>
+    </div>
   )
 }

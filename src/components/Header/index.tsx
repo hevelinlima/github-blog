@@ -12,7 +12,6 @@ export function Header(){
         <RightEffect src={ rightEffect } alt="" />
 
         <Rectangle src={ rectangle } alt="" />
-  
     </HeaderContainer>
   )
 }

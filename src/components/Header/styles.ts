@@ -6,6 +6,8 @@ export const HeaderContainer = styled.header`
   height: 18.5rem;
   position: relative;
   overflow: hidden;
+
+  z-index: -1;
 `
 
 export const IconLogo = styled.img`

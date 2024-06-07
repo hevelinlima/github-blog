@@ -15,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
       background-color: ${(props) => props.theme['base-background']};
       -webkit-font-smoothing: antialiased;
       font-family: "Nunito", sans-serif;
+      line-height: 1.6;
     }
   }
 `
