@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ProfileContainer = styled.section`
+export const ProfileContainer = styled.div`
   display: flex;
   gap: 2rem;
   width: 54rem;
