@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-export const ProfileContainer = styled.div`
+export const PostInfoContainer = styled.div`
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 0.5rem;
   width: 54rem;
-  position: relative;
+  
   margin-top: -5.5rem;
   z-index: 1;
 
@@ -13,18 +14,22 @@ export const ProfileContainer = styled.div`
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
   padding: 2rem 2.5rem ;
 
-  img{
-    height: 9.25rem;
-    border-radius: 8px;
+  h1{
+    margin-top: 0.75rem;
+    color: ${(props)=>props.theme["base-title"]};
+    font-size: 1.25rem;
   }
+`
+
+export const InfoHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+
   a{
     display: flex;
-    gap: 0.5rem;
     align-items: center;
+    gap: 0.5rem;
     height: 1.188rem;
-    position: absolute;
-    top: 2.5rem;
-    right: 2rem;
     
     color: ${(props)=>props.theme.blue};
     font-size: 0.75rem;
@@ -40,23 +45,12 @@ export const ProfileContainer = styled.div`
   }
 `
 
-export const Content = styled.div`
+export const InfoIcons = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  h1{
-    color: ${(props)=>props.theme["base-title"]};
-    font-size: 1.5rem;
-  }
+  gap: 1.5rem;
+  
   p{
     color: ${(props)=>props.theme["base-text"]};
     font-size: 1rem;
   }
-`
-
-export const InfoContainer = styled.div`
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
 `
