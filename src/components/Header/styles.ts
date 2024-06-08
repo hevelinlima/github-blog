@@ -40,3 +40,15 @@ export const Rectangle = styled.img`
   transform: translate(-50%) ;
   top: 10rem;
 `
+
+export const LeftEllipse = styled.img`
+  position: absolute;
+  left: -8rem;
+  top: -8rem;
+`
+
+export const RightEllipse = styled.img`
+  position: absolute;
+  right: 0;
+  top: 0;
+`
