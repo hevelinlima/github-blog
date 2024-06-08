@@ -8,7 +8,7 @@ export function PostInfo(){
   return(
     <PostInfoContainer>
       <InfoHeader>
-        <a href="">
+        <a href={'/'}>
           <FontAwesomeIcon icon={faChevronLeft} />
           VOLTAR
         </a>

@@ -19,7 +19,7 @@ export function Profile(){
           <IconWithText icon={faUserGroup} text="4 seguidores" />
         </InfoContainer>
       </Content>
-      <a href="">
+      <a href={"/post"}>
         <p>GITHUB</p>
         <FontAwesomeIcon icon={faArrowUpRightFromSquare}  />
       </a>

@@ -43,8 +43,8 @@ export const Rectangle = styled.img`
 
 export const LeftEllipse = styled.img`
   position: absolute;
-  left: -8rem;
-  top: -8rem;
+  left: -3rem;
+  top: -3rem;
 `
 
 export const RightEllipse = styled.img`

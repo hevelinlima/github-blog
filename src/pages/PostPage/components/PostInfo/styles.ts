@@ -21,7 +21,7 @@ export const PostInfoContainer = styled.div`
   }
 `
 
-export const InfoHeader = styled.header`
+export const InfoHeader = styled.div`
   display: flex;
   justify-content: space-between;
 
