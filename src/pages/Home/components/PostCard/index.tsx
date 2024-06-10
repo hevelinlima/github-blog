@@ -1,13 +1,19 @@
+import { PostCardProps } from "../..";
 import { CardContainer, CardHeader } from "./styles";
 
-export function PostCard(){
+interface PostCardComponentProps {
+  issue: PostCardProps;
+}
+
+
+export function PostCard({issue}:PostCardComponentProps){
   return(
     <CardContainer>
       <CardHeader>
-        <h1>JavaScript data types and data structures</h1>
-        <span>Há 2 dias</span>
+        <h1>{issue.title}</h1>
+        <span>{issue.created_at}</span>
       </CardHeader>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat culpa corporis itaque, provident delectus numquam expedita accusantium distinctio rem blanditiis aperiam dolore incidunt vitae iure atque dicta quam eum, similique nam pariatur veniam. Corrupti, cupiditate?</p>
+      <p>{issue.body}</p>
     </CardContainer>
   )
 }
