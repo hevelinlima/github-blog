@@ -1,14 +1,17 @@
 import styled from "styled-components";
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.a`
   max-width: 26rem;
   max-height: 16.25rem;
+
+  text-decoration: none;
 
   padding: 2rem;
   display: flex;
   flex-direction: column;
 
   background-color: ${(props)=>props.theme["base-post"]};
+  border: 2px solid transparent;
   border-radius: 10px;
 
   p{
@@ -16,6 +19,9 @@ export const CardContainer = styled.div`
     overflow: hidden;
     color: ${(props)=>props.theme["base-text"]};
     font-size: 1rem;
+  }
+  &:hover{
+    border: 2px solid ${(props)=>props.theme["base-border"]};
   }
 `
 

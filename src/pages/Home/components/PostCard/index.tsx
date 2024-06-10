@@ -1,14 +1,11 @@
-import { PostCardProps } from "../..";
+
+import { IssuesProps } from "../../../../contexts/ApiContext";
 import { CardContainer, CardHeader } from "./styles";
 
-interface PostCardComponentProps {
-  issue: PostCardProps;
-}
 
-
-export function PostCard({issue}:PostCardComponentProps){
+export function PostCard({issue}: IssuesProps){
   return(
-    <CardContainer>
+    <CardContainer href={`/post/${issue.number}`}>
       <CardHeader>
         <h1>{issue.title}</h1>
         <span>{issue.created_at}</span>
