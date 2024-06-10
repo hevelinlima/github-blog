@@ -30,13 +30,14 @@ export const CardHeader = styled.div`
   justify-content: space-between;
   
   h1{
-    max-width: 17.75rem;
+    max-width: 16rem;
     font-size: 1.25rem;
     line-height: 1.3;
     color: ${(props)=>props.theme["base-title"]};
   }
   span{
     font-size: 0.875rem;
+    text-align: right;
     color: ${(props)=>props.theme["base-span"]};
   }
 `
