@@ -10,8 +10,10 @@ export const PostPageContent = styled.div`
   padding: 2.5rem 2rem;
   color: ${(props)=>props.theme['base-text']};
 
-  p{
-    word-wrap: break-word;
+  .body-issue{
+    a{
+      color: ${(props)=>props.theme.blue}
+    }
   }
 `
 

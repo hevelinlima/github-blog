@@ -4,6 +4,9 @@ import { PostPageContainer, PostPageContent } from "./styles";
 import { api } from "../../lib/axios";
 import { useParams } from "react-router-dom";
 import { PostCardProps } from "../../contexts/ApiContext";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 
 export function Post(){
   const { number } = useParams();
@@ -11,12 +14,8 @@ export function Post(){
 
   useEffect(() => {
     async function fetchIssue() {
-      try {
-        const response = await api.get(`/repos/inaturalist/inaturalist/issues/${number}`);
-        setIssue(response.data);
-      } catch (error) {
-        console.error('Error fetching issue:', error);
-      }
+      const response = await api.get(`/repos/inaturalist/inaturalist/issues/${number}`);
+      setIssue(response.data);
     }
     fetchIssue();
   }, [number]);
@@ -31,7 +30,9 @@ export function Post(){
         <PostPageContainer>
           <PostInfo issue={issue} />
           <PostPageContent>
-            <p>{issue.body}</p>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} className="body-issue" >
+              {issue.body}
+            </ReactMarkdown>
           </PostPageContent>
         </PostPageContainer>
       </div>
