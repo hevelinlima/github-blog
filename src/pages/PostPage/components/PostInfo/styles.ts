@@ -4,7 +4,7 @@ export const PostInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  width: 54rem;
+  max-width: 54rem;
   
   margin-top: -5.5rem;
   z-index: 1;
@@ -18,6 +18,9 @@ export const PostInfoContainer = styled.div`
     margin-top: 0.75rem;
     color: ${(props)=>props.theme["base-title"]};
     font-size: 1.25rem;
+  }
+  @media only screen and (max-width: 768px) {
+    
   }
 `
 
@@ -52,5 +55,8 @@ export const InfoIcons = styled.div`
   p{
     color: ${(props)=>props.theme["base-text"]};
     font-size: 1rem;
+  }
+  @media only screen and (max-width: 768px) {
+    display: none;
   }
 `

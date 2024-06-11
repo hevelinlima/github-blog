@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const SearchBarContainer = styled.form`
   margin-top: 4.5rem;
+  max-width: 54rem;
   input{
     width: 100%;
     margin-top: 0.75rem;
@@ -17,6 +18,7 @@ export const SearchBarContainer = styled.form`
       color: ${(props) => props.theme['base-label']};
     }
   }
+  
 `
 
 export const SearchBarInfo = styled.div`

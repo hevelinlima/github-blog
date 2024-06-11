@@ -77,10 +77,10 @@ export function ApiProvider({ children }: ApiProviderProps) {
   }
 
   if (issues.length === 0) {
-    return <div>Issues not found!</div>;
+    return <div>Issue not found</div>;
   }
   if (!profileData) {
-    return <div>No profile data found</div>;
+    return ;
   }
 
   return (

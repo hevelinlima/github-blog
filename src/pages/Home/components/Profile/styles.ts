@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const ProfileContainer = styled.div`
   display: flex;
   gap: 2rem;
-  width: 54rem;
+  max-width: 54rem;
+  width: 100%;
   position: relative;
   margin-top: -5.5rem;
   z-index: 1;
@@ -38,6 +39,12 @@ export const ProfileContainer = styled.div`
       transition: border-bottom 0.2s;
     }
   }
+  @media only screen and (max-width: 768px) {
+    
+    a{
+      display: none;
+    }
+  }  
 `
 
 export const Content = styled.div`
@@ -53,10 +60,15 @@ export const Content = styled.div`
     color: ${(props)=>props.theme["base-text"]};
     font-size: 1rem;
   }
+  
 `
 
 export const InfoContainer = styled.div`
   display: flex;
   gap: 1.5rem;
   margin-top: 1rem;
+  padding: 0;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `
