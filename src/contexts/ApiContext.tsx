@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
 import { api } from "../lib/axios";
 
-interface ProfileDataProps{
+interface ProfileDataProps {
   avatar_url: string;
   bio: string;
   followers: number;
@@ -11,7 +11,7 @@ interface ProfileDataProps{
   name: string;
 }
 
-export interface PostCardProps{
+export interface PostCardProps {
   id: string;
   body: string;
   created_at: string;
@@ -22,53 +22,72 @@ export interface PostCardProps{
   html_url: string;
 }
 
-export interface IssuesProps{
-  issue: PostCardProps
+export interface IssuesProps {
+  issue: PostCardProps;
 }
 
-interface ApiContextType{
+interface ApiContextType {
   profileData: ProfileDataProps;
   issues: PostCardProps[];
+  fetchIssues: () => Promise<void>;
+  searchIssues: (query: string) => void;
 }
 
-export const ApiContext = createContext({} as ApiContextType)
+export const ApiContext = createContext({} as ApiContextType);
 
-interface ApiProviderProps{
-  children: ReactNode
+interface ApiProviderProps {
+  children: ReactNode;
 }
 
-export function ApiProvider({children}:ApiProviderProps){
-  const [profileData, setProfileData] = useState<ProfileDataProps | null >(null)
-  const [issues, setIssues] = useState<PostCardProps[]>([])
+export function ApiProvider({ children }: ApiProviderProps) {
+  const [profileData, setProfileData] = useState<ProfileDataProps | null>(null);
+  const [initialIssues, setInitialIssues] = useState<PostCardProps[]>([]);
+  const [issues, setIssues] = useState<PostCardProps[]>([]);
 
   // Get profileData
   useEffect(() => {
-    api.get('/users/hevelinlima').then(response => {
-      setProfileData(response.data)
-    })
-  }, [])
+    api.get('/users/hevelinlima').then((response) => {
+      setProfileData(response.data);
+    });
+  }, []);
 
-  //Get Issues data for the Home page
-  useEffect(()=> {
-    async function fetchIssues(){
-      const response = await api.get('/repos/inaturalist/inaturalist/issues');
-      setIssues(response.data)
-    }
+  // Get Issues data for the Home page
+  async function fetchIssues() {
+    const response = await api.get('/repos/inaturalist/inaturalist/issues');
+    setInitialIssues(response.data);
+    setIssues(response.data);
+  }
+
+  useEffect(() => {
     fetchIssues();
-  }, [])
+  }, []);
 
-  if (issues.length === 0){
-    return <div>Issues not found!</div>
-  }
-  if (!profileData){
-    return <div>No profile data found</div>
+  // Search issues
+  function searchIssues(query: string) {
+    if (!query) {
+      setIssues(initialIssues);
+      return;
+    }
+
+    const filteredIssues = initialIssues.filter((issue) =>
+      issue.title.toLowerCase().includes(query.toLowerCase())
+    );
+
+    setIssues(filteredIssues);
   }
 
-  return(
+  if (issues.length === 0) {
+    return <div>Issues not found!</div>;
+  }
+  if (!profileData) {
+    return <div>No profile data found</div>;
+  }
+
+  return (
     <ApiContext.Provider
-      value={{ profileData, issues }}
+      value={{ profileData, issues, fetchIssues, searchIssues }}
     >
       {children}
     </ApiContext.Provider>
-  )
+  );
 }
