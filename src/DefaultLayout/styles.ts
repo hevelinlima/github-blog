@@ -10,11 +10,10 @@ export const OutletContainer = styled.div`
   align-items: center;
   word-wrap: break-word;
 
-  width: 100%;
-
+ 
   @media only screen and (max-width: 768px) {
-   
-    width: auto;
+    
+    
     padding: 0 1.5rem;
   } 
 `

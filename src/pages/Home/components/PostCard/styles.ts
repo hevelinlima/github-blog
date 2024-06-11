@@ -23,6 +23,9 @@ export const CardContainer = styled.a`
   &:hover{
     border: 2px solid ${(props)=>props.theme["base-border"]};
   }
+  @media only screen and (max-width: 768px) {
+    max-width: 22rem;
+  }
 `
 
 export const CardHeader = styled.div`

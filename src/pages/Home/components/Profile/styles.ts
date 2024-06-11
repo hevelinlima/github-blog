@@ -39,8 +39,14 @@ export const ProfileContainer = styled.div`
       transition: border-bottom 0.2s;
     }
   }
-  @media only screen and (max-width: 768px) {
-    
+  @media only screen and (max-width: 430px) {
+    max-width: 38rem;
+    flex-direction: column;
+    img{
+      
+      height: auto;
+      width: 9rem;
+    }
     a{
       display: none;
     }

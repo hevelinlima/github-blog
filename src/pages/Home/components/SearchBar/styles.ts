@@ -18,7 +18,9 @@ export const SearchBarContainer = styled.form`
       color: ${(props) => props.theme['base-label']};
     }
   }
-  
+  @media only screen and (max-width: 450px) {
+    max-width: 38rem;
+  }
 `
 
 export const SearchBarInfo = styled.div`

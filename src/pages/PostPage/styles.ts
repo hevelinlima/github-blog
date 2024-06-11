@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const PostPageContainer = styled.div`
   max-width: 54rem;
-  
+  @media only screen and (max-width: 768px) {
+    max-width: 38rem;
+  }
 `
 
 export const PostPageContent = styled.div`
@@ -31,7 +33,7 @@ export const PostPageContent = styled.div`
   
   @media only screen and (max-width: 768px) {
     .body-issue{
-      max-width: 40rem; 
+      max-width: 38rem; 
 
       p{
         img{
