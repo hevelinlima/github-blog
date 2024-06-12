@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PostPageContainer = styled.div`
   max-width: 54rem;
   @media only screen and (max-width: 768px) {
-    max-width: 38rem;
+    max-width: 35rem;
   }
 `
 
@@ -16,6 +16,7 @@ export const PostPageContent = styled.div`
   .body-issue{
     width: 100%;
     padding: 1.25rem 0;
+    word-wrap: break-word;
     a{
       color: ${(props)=>props.theme.blue};
     }
@@ -32,9 +33,9 @@ export const PostPageContent = styled.div`
   }
   
   @media only screen and (max-width: 768px) {
+    padding: 0.25rem;
     .body-issue{
       max-width: 38rem; 
-
       p{
         img{
           max-width: 35rem;

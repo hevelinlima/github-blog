@@ -23,7 +23,6 @@ Para o desenvolvimento dessas funcionalidades, foram utilizados conceitos como:
 - ContextAPI
 - Fetch / Axios
 - Roteamento e React Router DOM
-- Listas e chaves no ReactJS
 - Styled-components
 - React Hook Forms
 
