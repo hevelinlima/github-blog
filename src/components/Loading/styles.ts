@@ -1,12 +1,20 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-export const LoadingContainer = styled.div`
-  font-size: 3rem;
-  color: ${(props)=>props.theme["base-title"]};
-  width: 35rem;
-  height: 25rem;
+const spin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
 
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+export const SkeletonContainer = styled.div`
+  padding: 2rem 5em;
+
+  .spinner{
+    height: 3.5rem;
+    
+    animation: ${spin} 1s linear infinite;  
+  }
 `

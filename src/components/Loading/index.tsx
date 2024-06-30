@@ -1,12 +1,11 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { LoadingContainer } from "./styles";
-// import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import circleNotch from "../../assets/circle-notch.svg"
+import { SkeletonContainer } from "./styles";
+
 
 export function Loading(){
   return(
-    <LoadingContainer>
-      Carregando
-      
-    </LoadingContainer>
+    <SkeletonContainer>
+      <img src={ circleNotch } className="spinner" />
+    </SkeletonContainer>
   )
 }

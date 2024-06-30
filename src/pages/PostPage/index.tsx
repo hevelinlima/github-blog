@@ -7,6 +7,7 @@ import { PostCardProps } from "../../contexts/ApiContext";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
+import { Loading } from "../../components/Loading";
 
 export function Post(){
   const { number } = useParams();
@@ -21,7 +22,7 @@ export function Post(){
   }, [number]);
 
   if (!issue) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return(

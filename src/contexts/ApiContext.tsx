@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
 import { api } from "../lib/axios";
+import { Loading } from "../components/Loading";
 
 interface ProfileDataProps {
   avatar_url: string;
@@ -77,10 +78,10 @@ export function ApiProvider({ children }: ApiProviderProps) {
   }
 
   if (issues.length === 0) {
-    return <div>Issue not found</div>;
+    return <Loading />;
   }
   if (!profileData) {
-    return ;
+    return <Loading />;
   }
 
   return (

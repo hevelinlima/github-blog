@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ProfileContainer = styled.div`
   display: flex;
+  justify-content: center;
   gap: 2rem;
   max-width: 54rem;
   width: 100%;
@@ -77,4 +78,11 @@ export const InfoContainer = styled.div`
   @media only screen and (max-width: 768px) {
     display: none;
   }
+`
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 `
